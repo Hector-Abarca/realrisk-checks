@@ -1,0 +1,8 @@
+{
+  "schema": "realrisk-checks/1.0",
+  "repo": "https://github.com/Hector-Abarca/realrisk-checks",
+  "sitio": "https://realrisk.asentic.cl",
+  "contrato_seguridad": "SECURITY.md",
+  "actualizado": "2026-06-27",
+  "verificadores": []
+}

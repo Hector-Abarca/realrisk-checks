@@ -1,0 +1,32 @@
+name: contrato
+
+# Valida el contrato de seguridad de los verificadores en cada cambio.
+# Ningún verificador entra a main sin pasar esta verificación.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validar-contrato:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validar contrato (index.json + verificadores)
+        run: python3 tools/validate_contract.py
+
+      - name: Compilar todos los scripts (chequeo de sintaxis)
+        run: |
+          python3 -m py_compile tools/check_template.py tools/validate_contract.py
+          shopt -s nullglob
+          for f in CVE-*/check_*.py; do
+            echo "py_compile $f"
+            python3 -m py_compile "$f"
+          done
