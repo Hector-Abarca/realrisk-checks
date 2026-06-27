@@ -24,6 +24,26 @@
       "version": "1.0.0",
       "sha256": "699bfbc8ab5df8b6a687b69e09eb48c83aa4cd830c8290df85366d75446b4b19",
       "publicado": "2026-06-27"
+    },
+    {
+      "cve": "CVE-2024-23897",
+      "titulo": "Jenkins — lectura de archivos arbitrarios vía el parser de la CLI",
+      "ruta": "CVE-2024-23897",
+      "script": "check_cve_2024_23897.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Lee la versión del header X-Jenkins con una petición sin autenticar y la compara con las versiones corregidas (2.442 weekly / 2.426.3 LTS).",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "da6a2310ea2338de7648049410b816fa23943073ee56730348dcb6a60579b323",
+      "publicado": "2026-06-27"
     }
   ]
 }
