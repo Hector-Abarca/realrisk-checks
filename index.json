@@ -4,5 +4,26 @@
   "sitio": "https://realrisk.asentic.cl",
   "contrato_seguridad": "SECURITY.md",
   "actualizado": "2026-06-27",
-  "verificadores": []
+  "verificadores": [
+    {
+      "cve": "CVE-2021-44228",
+      "titulo": "Log4Shell — ejecución remota de código en Apache Log4j 2 vía JNDI",
+      "ruta": "CVE-2021-44228",
+      "script": "check_cve_2021_44228.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Escanea el sistema de archivos buscando log4j-core, lee su versión real (pom.properties/MANIFEST) y comprueba si la clase JndiLookup.class sigue presente, incluso dentro de jars anidados (WAR/EAR/fat jar). 100% local, sin red.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "699bfbc8ab5df8b6a687b69e09eb48c83aa4cd830c8290df85366d75446b4b19",
+      "publicado": "2026-06-27"
+    }
+  ]
 }
