@@ -14,7 +14,7 @@
       "requiere": "python>=3.8 (solo biblioteca estándar)",
       "nivel": 1,
       "nivel_nombre": "pasivo",
-      "hace": "Escanea el sistema de archivos buscando log4j-core, lee su versión real (pom.properties/MANIFEST) y comprueba si la clase JndiLookup.class sigue presente, incluso dentro de jars anidados (WAR/EAR/fat jar). 100% local, sin red.",
+      "hace": "Escanea el sistema de archivos en busca de log4j-core vulnerable (versión y presencia de JndiLookup), incluso en jars anidados.",
       "salida": [
         "VULNERABLE",
         "NO_VULNERABLE",
