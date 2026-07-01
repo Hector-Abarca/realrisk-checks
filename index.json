@@ -3,8 +3,48 @@
   "repo": "https://github.com/Hector-Abarca/realrisk-checks",
   "sitio": "https://realrisk.asentic.cl",
   "contrato_seguridad": "SECURITY.md",
-  "actualizado": "2026-06-27",
+  "actualizado": "2026-07-01",
   "verificadores": [
+    {
+      "cve": "CVE-2026-45247",
+      "titulo": "Magento (Mirasvit Full Page Cache Warmer) — RCE por inyección de objetos PHP",
+      "ruta": "CVE-2026-45247",
+      "script": "check_cve_2026_45247.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Lee la versión instalada de la extensión Mirasvit Full Page Cache Warmer (composer.lock / installed.json / composer.json / module.xml) y la compara con la versión corregida 1.11.12.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "008b4a4a2b40a2e1222486fa352a8d2b44a0532a1d90d4a1f9d313f393e9cab9",
+      "publicado": "2026-07-01"
+    },
+    {
+      "cve": "CVE-2026-48558",
+      "titulo": "SimpleHelp — bypass de autenticación por firma OIDC no verificada",
+      "ruta": "CVE-2026-48558",
+      "script": "check_cve_2026_48558.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 2,
+      "nivel_nombre": "sonda activa benigna",
+      "hace": "Lee la versión del endpoint sin autenticar /allversions (campo Visual Version) con una sola petición GET y la compara con la versión corregida 5.5.16.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "d2b05e6205fb72978aae27599f750fb3f48acf3645ad3cc4ca25d846ff85128a",
+      "publicado": "2026-07-01"
+    },
     {
       "cve": "CVE-2021-44228",
       "titulo": "Log4Shell — ejecución remota de código en Apache Log4j 2 vía JNDI",
