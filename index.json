@@ -204,6 +204,186 @@
       "version": "1.0.0",
       "sha256": "c45aff49288d58aa7303cc8c1b26d57834e7d3773fed77084d4dee8404772054",
       "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2014-6271",
+      "titulo": "Shellshock — ejecución de comandos por variables de entorno en GNU Bash",
+      "ruta": "CVE-2014-6271",
+      "script": "check_cve_2014_6271.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar); requiere bash",
+      "nivel": 1,
+      "nivel_nombre": "local (conductual)",
+      "hace": "Ejecuta el test conductual canónico de Shellshock sobre cada bash instalado (define una función en una variable de entorno con un echo y observa si bash lo ejecuta). Inmune al ruido de backports.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "9d1b0fae81f824b2ada41c232f8f97004fd1c53ace5d43b5cdd3151fd2d6de41",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2017-5638",
+      "titulo": "Apache Struts 2 — RCE por el parser Jakarta Multipart (el de Equifax)",
+      "ruta": "CVE-2017-5638",
+      "script": "check_cve_2017_5638.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Escanea el sistema de archivos buscando struts2-core (incluso en WAR/EAR/fat jars) y compara su versión con las corregidas 2.3.32 / 2.5.10.1.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "3acb45769569533b7da24db4b6c081a884c0f599b25e5707c8ceeef03f1f0afd",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2021-45105",
+      "titulo": "Apache Log4j 2 — denegación de servicio por recursión en lookups",
+      "ruta": "CVE-2021-45105",
+      "script": "check_cve_2021_45105.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Escanea el sistema de archivos buscando log4j-core (incluso anidado) y compara su versión con la corregida 2.17.0 (y backports 2.12.3 / 2.3.1).",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "41863d45b0ed7f506efeaecb159bee32bd5f4b8616e7c7269dc42f6b1929c02d",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2014-0160",
+      "titulo": "Heartbleed — lectura de memoria vía la extensión Heartbeat de OpenSSL",
+      "ruta": "CVE-2014-0160",
+      "script": "check_cve_2014_0160.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar); comando openssl",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Lee la versión local de OpenSSL y la clasifica frente al rango afectado (1.0.1 a 1.0.1f) con conciencia de backports. NO hace la sonda Heartbeat (que leería memoria ajena).",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "d19f01f01834336ad10b57f032fb672b65367cec8998c0105c162c475e7293b0",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2014-3566",
+      "titulo": "POODLE — descifrado por padding en SSL 3.0",
+      "ruta": "CVE-2014-3566",
+      "script": "check_cve_2014_3566.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 2,
+      "nivel_nombre": "sonda activa benigna",
+      "hace": "Ofrece solo SSL 3.0 en un ClientHello al host indicado y observa si el servidor lo acepta. Un handshake, sin datos de aplicación.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "29dcb1df26cbf5790575afd1ba1ec6e7af7e549ab978f9941348409d100883bc",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2018-7600",
+      "titulo": "Drupalgeddon2 — RCE sin autenticación en Drupal",
+      "ruta": "CVE-2018-7600",
+      "script": "check_cve_2018_7600.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 2,
+      "nivel_nombre": "sonda activa benigna",
+      "hace": "Lee la versión de Drupal desde /CHANGELOG.txt (un GET) y la compara con las corregidas 7.58 / 8.3.9 / 8.4.6 / 8.5.1. Sin payload.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "32a84db463e20af4aa95bed41c1d878719024a6d8955c66386d960e95adceb90",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2022-26134",
+      "titulo": "Atlassian Confluence — RCE por inyección OGNL sin autenticación",
+      "ruta": "CVE-2022-26134",
+      "script": "check_cve_2022_26134.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 2,
+      "nivel_nombre": "sonda activa benigna",
+      "hace": "Lee la versión que Confluence publica (un GET) y la compara con las corregidas por rama (7.4.17 / 7.13.7 / … / 7.18.1). Sin inyección OGNL.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "b0e57648c5ba5a1b6b337c734fab224839808ed37071988337428f84cc4c6e86",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2019-0708",
+      "titulo": "BlueKeep — RCE sin autenticación en RDP de Windows",
+      "ruta": "CVE-2019-0708",
+      "script": "check_cve_2019_0708.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar, incluye winreg); correr en Windows",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Corriendo en el host Windows, identifica si el SO es afectado (Win7/2008/2008 R2/Vista/XP/2003 por build) y evalúa el parche por los hotfixes (KB de corrección o rollup posterior al 2019-05-14).",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "4519654fb5589e4cef589a751c9ade17bab100a3c7a3c3d35502a605a38efa23",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2021-26855",
+      "titulo": "Microsoft Exchange ProxyLogon (SSRF, cadena hacia RCE)",
+      "ruta": "CVE-2021-26855",
+      "script": "check_cve_2021_26855.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 2,
+      "nivel_nombre": "sonda activa benigna",
+      "hace": "Lee el build de Exchange desde las rutas de recursos de OWA (un GET) y lo compara con el build corregido de su Cumulative Update (umbral julio 2021, cubre ProxyLogon y ProxyShell).",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "390ff1d10c51b917c08431c915fdf48da5882bf0df229ba4917934d7cb442294",
+      "publicado": "2026-07-02"
     }
   ]
 }
