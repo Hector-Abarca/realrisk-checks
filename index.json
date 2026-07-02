@@ -3,7 +3,7 @@
   "repo": "https://github.com/Hector-Abarca/realrisk-checks",
   "sitio": "https://realrisk.asentic.cl",
   "contrato_seguridad": "SECURITY.md",
-  "actualizado": "2026-07-01",
+  "actualizado": "2026-07-02",
   "verificadores": [
     {
       "cve": "CVE-2026-45247",
@@ -84,6 +84,126 @@
       "version": "1.0.0",
       "sha256": "b27b9f74fd253c2d04feecad75e723f87e807bda917ba7cc5c2af0c13a763eb0",
       "publicado": "2026-06-27"
+    },
+    {
+      "cve": "CVE-2022-22965",
+      "titulo": "Spring4Shell — ejecución remota de código en Spring Framework vía data binding",
+      "ruta": "CVE-2022-22965",
+      "script": "check_cve_2022_22965.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Escanea el sistema de archivos buscando spring-beans en versión afectada (< 5.3.18 / 5.2.20) y confirma el contexto de despliegue WAR sobre Tomcat antes de declararlo vulnerable.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "cffca06ee3e72b66b14687da517ee856a8de1b1ec43db5efb244c0cf840183c6",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2025-24813",
+      "titulo": "Apache Tomcat — ejecución remota de código por equivalencia de rutas en el servlet por defecto",
+      "ruta": "CVE-2025-24813",
+      "script": "check_cve_2025_24813.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Lee la versión de Tomcat del catalina.jar y la configuración readonly del servlet por defecto en los web.xml, y las compara con las builds corregidas (9.0.99 / 10.1.35 / 11.0.3).",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "d3156b3a88bd5f11316845b9a560c69e27164bbdaaa64691064c11c4a6899fa3",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2026-43284",
+      "titulo": "Kernel de Linux — corrupción de memoria en el procesamiento de ESP sobre UDP",
+      "ruta": "CVE-2026-43284",
+      "script": "check_cve_2026_43284.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar); Linux",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Lee la versión del kernel (uname) con conciencia de backports: en kernel de distribución devuelve NO_CONCLUYENTE con puntero al aviso de la distro; en mainline vanilla compara contra los puntos de corrección publicados.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "a013745baf10d37e2a3f32ec2439ddc4a15b9ab3da10bd4036847ccce2072041",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2026-31431",
+      "titulo": "Kernel de Linux — manejo inseguro de memoria en la interfaz de cifrado algif_aead",
+      "ruta": "CVE-2026-31431",
+      "script": "check_cve_2026_31431.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar); Linux",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Lee la versión del kernel (uname) con conciencia de backports: en kernel de distribución devuelve NO_CONCLUYENTE con puntero al aviso de la distro; en mainline vanilla compara contra los puntos de corrección publicados.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "42b747bafccd481c5bc6aee99d9ca05b2d811cb2158e8b6424a738449e66a781",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2026-41089",
+      "titulo": "Windows Netlogon — ejecución remota de código por desbordamiento de búfer en la pila",
+      "ruta": "CVE-2026-41089",
+      "script": "check_cve_2026_41089.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar, incluye winreg); correr en Windows",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Corriendo en el host Windows, compara el build del SO y su revisión (UBR) del registro con la primera build corregida de cada Windows Server afectado.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "616ecf180a7ab8f1c11483b08f382d9736407005394098a8532837b4f4167ac2",
+      "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2026-24061",
+      "titulo": "GNU Inetutils telnetd — bypass de autenticación remota por inyección de argumento",
+      "ruta": "CVE-2026-24061",
+      "script": "check_cve_2026_24061.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 1,
+      "nivel_nombre": "pasivo",
+      "hace": "Detecta el binario telnetd de GNU Inetutils, su versión y si lo gestiona un paquete de la distribución (backport); devuelve NO_CONCLUYENTE cuando la versión no basta para decidir.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "c45aff49288d58aa7303cc8c1b26d57834e7d3773fed77084d4dee8404772054",
+      "publicado": "2026-07-02"
     }
   ]
 }
