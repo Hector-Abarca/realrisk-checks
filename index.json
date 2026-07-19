@@ -3,7 +3,7 @@
   "repo": "https://github.com/Hector-Abarca/realrisk-checks",
   "sitio": "https://realrisk.asentic.cl",
   "contrato_seguridad": "SECURITY.md",
-  "actualizado": "2026-07-02",
+  "actualizado": "2026-07-19",
   "verificadores": [
     {
       "cve": "CVE-2026-45247",
@@ -384,6 +384,26 @@
       "version": "1.0.0",
       "sha256": "390ff1d10c51b917c08431c915fdf48da5882bf0df229ba4917934d7cb442294",
       "publicado": "2026-07-02"
+    },
+    {
+      "cve": "CVE-2026-63030",
+      "titulo": "WordPress core wp2shell (RCE sin autenticar, cadena con CVE-2026-60137)",
+      "ruta": "CVE-2026-63030",
+      "script": "check_cve_2026_63030.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 3,
+      "nivel_nombre": "confirmación",
+      "hace": "Confirma la confusión de rutas del batch endpoint /wp-json/batch/v1 comparando un lote de control con un lote sonda: si /wp/v2/posts pasa a responder rest_no_route solo por efecto de un path que no parsea, el desalineamiento de CVE-2026-63030 está presente. Sin inyección SQL ni escritura. Cae a lectura de versión si el REST no es accesible.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "publicado": "2026-07-19",
+      "version": "1.0.0",
+      "sha256": "05f3c89721ef0e7ddcd8ea7323438866388c8fce3b47c23dc0575e62c16a9075"
     }
   ]
 }
