@@ -3,7 +3,7 @@
   "repo": "https://github.com/Hector-Abarca/realrisk-checks",
   "sitio": "https://realrisk.asentic.cl",
   "contrato_seguridad": "SECURITY.md",
-  "actualizado": "2026-07-19",
+  "actualizado": "2026-10-21",
   "verificadores": [
     {
       "cve": "CVE-2026-45247",
@@ -404,6 +404,46 @@
       "publicado": "2026-07-19",
       "version": "1.0.0",
       "sha256": "05f3c89721ef0e7ddcd8ea7323438866388c8fce3b47c23dc0575e62c16a9075"
+    },
+    {
+      "cve": "CVE-2026-109618",
+      "titulo": "PHP core PHP2Shell — use-after-free / RCE sin autenticar vía session.upload_progress",
+      "ruta": "CVE-2026-109618",
+      "script": "check_cve_2026_109618.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 2,
+      "nivel_nombre": "pasivo (local) / sonda GET benigna (remoto)",
+      "hace": "Determina la versión de PHP del objetivo y la compara con las builds corregidas (8.2.35 / 8.3.36 / 8.4.27 / 8.5.12). En modo local inspecciona cada intérprete (CLI, php-fpm y el módulo de Apache por dpkg) y lee session.upload_progress.enabled; en modo remoto lee la versión del header X-Powered-By/Server con un GET. No gatilla el UAF.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "4c48920cadc6a1e25ab647c7c329220a81addaf79cf039fbb4be8f8f8047c403",
+      "publicado": "2026-10-21"
+    },
+    {
+      "cve": "CVE-2026-109619",
+      "titulo": "PHP core PHP2Shell — estado persistente obsoleto (UAF / fuga de memoria), cadena con CVE-2026-109618",
+      "ruta": "CVE-2026-109618",
+      "script": "check_cve_2026_109618.py",
+      "lenguaje": "python",
+      "requiere": "python>=3.8 (solo biblioteca estándar)",
+      "nivel": 2,
+      "nivel_nombre": "pasivo (local) / sonda GET benigna (remoto)",
+      "hace": "Determina la versión de PHP del objetivo y la compara con las builds corregidas (8.2.35 / 8.3.36 / 8.4.27 / 8.5.12). En modo local inspecciona cada intérprete (CLI, php-fpm y el módulo de Apache por dpkg) y lee session.upload_progress.enabled; en modo remoto lee la versión del header X-Powered-By/Server con un GET. No gatilla el UAF.",
+      "salida": [
+        "VULNERABLE",
+        "NO_VULNERABLE",
+        "NO_CONCLUYENTE"
+      ],
+      "autorizacion_requerida": true,
+      "version": "1.0.0",
+      "sha256": "4c48920cadc6a1e25ab647c7c329220a81addaf79cf039fbb4be8f8f8047c403",
+      "publicado": "2026-10-21"
     }
   ]
 }
